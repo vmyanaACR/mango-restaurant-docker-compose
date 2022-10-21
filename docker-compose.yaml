@@ -1,0 +1,20 @@
+version: '3.7'
+services:
+  mango-db:
+    labels:
+      com.mango.description: "mango restaurant db service"
+      com.mango.servicetype: "db"
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: mango-restaurant-db
+    restart: unless-stopped
+    ports:
+      - "1433:1433"
+    environment:
+      MSSQL_SA_PASSWORD: "Welcome1!"
+      ACCEPT_EULA: "Y"
+    volumes:
+      - mango-db-data: /var/opt/mssql/data
+
+volumes:
+  mango-db-data
+    
