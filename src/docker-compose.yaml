@@ -1,9 +1,6 @@
-version: '3.7'
+version: "3.9"
 services:
   mango-db:
-    labels:
-      com.mango.description: "mango restaurant db service"
-      com.mango.servicetype: "db"
     image: mcr.microsoft.com/mssql/server:2022-latest
     container_name: mango-restaurant-db
     restart: unless-stopped
